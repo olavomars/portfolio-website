@@ -1,0 +1,52 @@
+body {
+  font-family: 'Montserrat';
+  background-color: #fffafb;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.pages__Header {
+  width: 100%;
+  height: 136px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3.5vw;
+}
+
+.Filters__Container {
+  position: relative;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 23px;
+  transform: translateX(0px);
+  display: flex;
+  font-size: 14px;
+  padding: 5px;
+}
+
+.Filters__Highlight {
+  position: absolute;
+  height: 32px;
+  width: 49px;
+  border-radius: 16px;
+  z-index: -1;
+  background: rgb(255, 255, 255);
+}
+
+.Filters__Option {
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 16px;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 40%;
+    transition: opacity 0.3s ease 0s;
+  }
+}

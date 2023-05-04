@@ -1,10 +1,15 @@
-import React from 'react';
+import {useState} from 'react';
 import {Route, Routes} from 'react-router-dom';
+import './Styles/App.scss';
+import Header from './Components/Header';
 
-import './App.css';
+import {ThemeContext} from './Contexts/theme-context';
 
-const App = () => {
-  return <div>Hey</div>;
+export const App = () => {
+  const [theme, setTheme] = useState('light');
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 };
-
-export default App;
