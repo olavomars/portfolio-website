@@ -42,12 +42,25 @@ body {
   align-items: center;
   height: 32px;
   padding: 0 16px;
+  opacity: 50%;
 
   &:hover {
     cursor: pointer;
-    opacity: 40%;
+    opacity: 90%;
     transition: opacity 0.3s ease 0s;
   }
+}
+
+.active {
+  opacity: 100%;
+}
+
+.layout {
+  background: blue;
+}
+
+.ugabuga {
+  background: yellow;
 }
 
 @media screen and (max-width: 799px) {

@@ -1,32 +1,18 @@
-import {useState, useEffect} from 'react';
-
+import {useState} from 'react';
 import '../styles/App.scss';
 
+const FILTERS = [
+  {id: 1, name: 'All', left: 5, width: 40},
+  {id: 2, name: 'About', left: 55, width: 65},
+  {id: 3, name: 'Projects', left: 129, width: 82},
+  {id: 4, name: 'Personal', left: 218, width: 83},
+];
+
 function Header() {
-  const [currentFilter, setCurrentFilter] = useState(1);
-  const [highlightLeftPlacement, setHighlightLeftPlacement] = useState();
-  const [highlightWidth, setHighlightWidth] = useState();
+  const [currentFilter, setCurrentFilter] = useState(FILTERS[0]);
 
-  useEffect(() => {
-    setHighlightLeftPlacement(5);
-    setHighlightWidth(40);
-  }, []);
-
-  const handleFilterChange = (currentFilter) => {
-    const filtersArr = [1, 2, 3, 4];
-    if (filtersArr[0] === currentFilter) {
-      setHighlightLeftPlacement(5);
-      setHighlightWidth(40);
-    } else if (filtersArr[1] === currentFilter) {
-      setHighlightLeftPlacement(55);
-      setHighlightWidth(65);
-    } else if (filtersArr[2] === currentFilter) {
-      setHighlightLeftPlacement(129);
-      setHighlightWidth(82);
-    } else if (filtersArr[3] === currentFilter) {
-      setHighlightLeftPlacement(218);
-      setHighlightWidth(83);
-    }
+  const handleFilterChange = (filter) => {
+    setCurrentFilter(filter);
   };
 
   return (
@@ -36,47 +22,22 @@ function Header() {
         <div
           className='Filters__Highlight'
           style={{
-            width: `${highlightWidth}px`,
-            transform: `translate(${highlightLeftPlacement}px, 0)`,
+            width: `${currentFilter.width}px`,
+            transform: `translate(${currentFilter.left}px, 0)`,
             transition: 'transform 0.3s ease-in-out, width 0.4s ease',
           }}
         ></div>
-        <div
-          className='Filters__Option'
-          onClick={() => {
-            setCurrentFilter(1);
-            handleFilterChange(1);
-          }}
-        >
-          All
-        </div>
-        <div
-          className='Filters__Option'
-          onClick={() => {
-            setCurrentFilter(2);
-            handleFilterChange(2);
-          }}
-        >
-          About
-        </div>
-        <div
-          className='Filters__Option'
-          onClick={() => {
-            setCurrentFilter(3);
-            handleFilterChange(3);
-          }}
-        >
-          Projects
-        </div>
-        <div
-          className='Filters__Option'
-          onClick={() => {
-            setCurrentFilter(4);
-            handleFilterChange(4);
-          }}
-        >
-          Personal
-        </div>
+        {FILTERS.map((filter) => (
+          <div
+            key={filter.id}
+            className={`Filters__Option ${
+              currentFilter.id === filter.id ? 'active' : ''
+            }`}
+            onClick={() => handleFilterChange(filter)}
+          >
+            {filter.name}
+          </div>
+        ))}
       </div>
       <a className='pages__ContactButton'>Contact</a>
     </nav>
