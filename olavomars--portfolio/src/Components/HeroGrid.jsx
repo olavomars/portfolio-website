@@ -1,20 +1,55 @@
-import React from 'react';
-import GridLayout from 'react-grid-layout';
+import React, {useState} from 'react';
+import {Responsive, WidthProvider} from 'react-grid-layout';
 
 export const HeroGrid = () => {
-  const layout = [
-    {i: 'a', x: 0, y: 0, w: 4, h: 4, minW: 4},
-    {i: 'b', x: 1, y: 0, w: 3, h: 2, minW: 2, maxW: 4},
-    {i: 'c', x: 4, y: 0, w: 1, h: 2},
-  ];
+  const ResponsiveGridLayout = WidthProvider(Responsive);
+  const [rowHeight, setRowHeight] = useState(288);
+
+  const handleBreakpointChange = (newBreakpoint) => {
+    switch (newBreakpoint) {
+      case 'lg':
+        setRowHeight(288);
+        break;
+      case 'md':
+        setRowHeight(288);
+        break;
+      case 'sm':
+        setRowHeight(180);
+        break;
+      case 'xs':
+        setRowHeight(164);
+        break;
+      default:
+        setRowHeight(288);
+    }
+  };
+
+  const layouts = {
+    lg: [
+      {i: 'a', x: 0, y: 0, w: 1, h: 1, minW: 2},
+      {i: 'b', x: 0, y: 0, w: 2, h: 1, minW: 1},
+      {i: 'c', x: 0, y: 0, w: 1, h: 1, minW: 1},
+    ],
+    md: [
+      {i: 'a', x: 0, y: 0, w: 1, h: 1, minW: 1},
+      {i: 'b', x: 0, y: 0, w: 2, h: 1, minW: 2},
+      {i: 'c', x: 0, y: 0, w: 1, h: 1, minW: 1},
+    ],
+    sm: [
+      {i: 'a', x: 0, y: 0, w: 1, h: 1, minW: 1},
+      {i: 'b', x: 0, y: 0, w: 2, h: 1, minW: 1},
+      {i: 'c', x: 0, y: 0, w: 1, h: 1, minW: 1},
+    ],
+  };
 
   return (
-    <GridLayout
+    <ResponsiveGridLayout
       className='layout'
-      layout={layout}
-      cols={12}
-      rowHeight={30}
-      width={1200}
+      layouts={layouts}
+      breakpoints={{lg: 1200, md: 800, sm: 480, xs: 0}}
+      rowHeight={rowHeight}
+      cols={{lg: 4, md: 4, sm: 4, xs: 2}}
+      onBreakpointChange={handleBreakpointChange}
     >
       <div className='ugabuga' key='a'>
         a
@@ -25,6 +60,6 @@ export const HeroGrid = () => {
       <div className='ugabuga' key='c'>
         c
       </div>
-    </GridLayout>
+    </ResponsiveGridLayout>
   );
 };

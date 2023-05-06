@@ -57,13 +57,23 @@ body {
 
 .layout {
   background: blue;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .ugabuga {
   background: yellow;
+  transition: all 250ms ease 0s;
+  will-change: transform;
 }
 
-@media screen and (max-width: 799px) {
+@media screen and (max-width: 1200px) {
+  .layout {
+    max-width: 800px;
+  }
+}
+
+@media screen and (max-width: 800px) {
   .pages__Header {
     display: grid;
     max-width: 315px;
@@ -75,6 +85,10 @@ body {
     align-content: space-around;
     margin: 32px auto 32px auto;
     margin-bottom: 74px;
+  }
+
+  .layout {
+    max-width: 375px;
   }
 
   .Filters__Container {
