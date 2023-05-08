@@ -55,16 +55,52 @@ body {
   opacity: 100%;
 }
 
-.layout {
-  background: blue;
-  max-width: 1200px;
-  margin: 0 auto;
+.react-grid-item {
+  transition: all 500ms ease 0s;
 }
 
-.ugabuga {
-  background: yellow;
+.layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.summary__container {
+  color: rgb(13, 17, 23);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 36px 42px;
+  border-radius: 32px;
+  overflow: hidden;
+  background: rgb(255, 255, 255);
+  user-select: none;
   transition: all 250ms ease 0s;
-  will-change: transform;
+
+  p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
+
+  &:hover {
+    cursor: grab;
+    box-shadow: rgba(100, 100, 111, 0.05) 0px 5px 34px 0px;
+  }
+}
+
+.summary__memojiContainer {
+  width: 160px;
+}
+.summary__memoji {
+  width: 160px;
+  position: absolute;
+  left: -8px;
 }
 
 @media screen and (max-width: 1200px) {
