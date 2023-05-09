@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Responsive, WidthProvider} from 'react-grid-layout';
 
 import {Summary} from './Summary';
+import {Github} from './Github';
 
 export const HeroGrid = () => {
   const ResponsiveGridLayout = WidthProvider(Responsive);
@@ -29,18 +30,23 @@ export const HeroGrid = () => {
   const layouts = {
     lg: [
       {i: 'Summary', x: 0, y: 0, w: 2, h: 1},
-      {i: 'b', x: 0, y: 0, w: 2, h: 1},
+      {i: 'Github', x: 0, y: 0, w: 1, h: 1},
       {i: 'c', x: 0, y: 0, w: 1, h: 1},
     ],
     md: [
       {i: 'Summary', x: 0, y: 0, w: 2, h: 1},
-      {i: 'b', x: 0, y: 0, w: 2, h: 1, minW: 2},
-      {i: 'c', x: 0, y: 0, w: 1, h: 1, minW: 1},
+      {i: 'Github', x: 0, y: 0, w: 1, h: 1},
+      {i: 'c', x: 0, y: 0, w: 1, h: 1},
     ],
     sm: [
-      {i: 'a', x: 0, y: 0, w: 1, h: 1, minW: 1},
-      {i: 'b', x: 0, y: 0, w: 2, h: 1, minW: 1},
-      {i: 'c', x: 0, y: 0, w: 1, h: 1, minW: 1},
+      {i: 'Summary', x: 0, y: 0, w: 2, h: 2},
+      {i: 'Github', x: 0, y: 0, w: 1, h: 1},
+      {i: 'c', x: 0, y: 0, w: 1, h: 1},
+    ],
+    xs: [
+      {i: 'Summary', x: 0, y: 0, w: 2, h: 2},
+      {i: 'Github', x: 0, y: 0, w: 1, h: 1},
+      {i: 'c', x: 0, y: 0, w: 1, h: 1},
     ],
   };
 
@@ -56,8 +62,8 @@ export const HeroGrid = () => {
       <div key='Summary' className='summary__gridItem react-grid-item'>
         <Summary />
       </div>
-      <div className='ugabuga' key='b'>
-        b
+      <div key='Github' className='react-grid-item'>
+        <Github />
       </div>
       <div className='ugabuga' key='c'>
         c

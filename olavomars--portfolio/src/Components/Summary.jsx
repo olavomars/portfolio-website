@@ -9,8 +9,9 @@ export const Summary = () => {
         <img src={memoji} className='summary__memoji'></img>
       </div>
       <p className='summary__text'>
-        I'm Olavo, a developer from Brazil. I'm interested in React, Node,
-        Product Design, Jamstack, Startups, Cryptocurrencies and Music.
+        I'm <span className='summary__gradientText'>Olavo</span>, a developer
+        from Brazil. I'm interested in Javascript, React Product Design,
+        Startups, Cats and Music.
       </p>
     </div>
   );

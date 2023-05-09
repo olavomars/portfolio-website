@@ -57,12 +57,36 @@ body {
 
 .react-grid-item {
   transition: all 500ms ease 0s;
+  &:hover {
+    cursor: grab;
+    box-shadow: rgba(100, 100, 111, 0.05) 0px 5px 34px 0px;
+    transition: box-shadow 500ms ease-in-out 0s;
+  }
 }
 
 .layout {
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
+}
+
+.react-grid-item.react-draggable-dragging {
+  transition: none;
+  z-index: 3;
+  will-change: transform;
+  cursor: grabbing;
+}
+.react-draggable-dragging {
+  cursor: grabbing;
+}
+
+.react-grid-item.react-grid-placeholder {
+  background: black;
+  opacity: 0.05;
+  transition-duration: 500ms;
+  border-radius: 32px;
+  z-index: 2;
+  user-select: none;
 }
 
 .summary__container {
@@ -78,7 +102,6 @@ body {
   overflow: hidden;
   background: rgb(255, 255, 255);
   user-select: none;
-  transition: all 250ms ease 0s;
 
   p {
     display: block;
@@ -86,11 +109,6 @@ body {
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-  }
-
-  &:hover {
-    cursor: grab;
-    box-shadow: rgba(100, 100, 111, 0.05) 0px 5px 34px 0px;
   }
 }
 
@@ -103,9 +121,39 @@ body {
   left: -8px;
 }
 
+.summary__gradientText {
+  background-image: linear-gradient(90deg, #007cf0, #00dfd8);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-family: 'Work Sans';
+  font-size: 30px;
+}
+
+.github__container {
+  background-color: #171515;
+  height: 100%;
+  width: 100%;
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.github__SVG {
+  width: 100px;
+}
+
 @media screen and (max-width: 1200px) {
   .layout {
     max-width: 800px;
+  }
+
+  .summary__memoji {
+    width: 160px;
+    position: absolute;
+    left: -8px;
+    top: 55px;
   }
 }
 
