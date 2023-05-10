@@ -57,6 +57,7 @@ body {
 
 .react-grid-item {
   transition: all 500ms ease 0s;
+
   &:hover {
     cursor: grab;
     box-shadow: rgba(100, 100, 111, 0.05) 0px 5px 34px 0px;
@@ -138,6 +139,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  user-select: none;
 }
 
 .github__SVG {
