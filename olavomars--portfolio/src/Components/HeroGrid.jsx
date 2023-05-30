@@ -3,6 +3,8 @@ import {Responsive, WidthProvider} from 'react-grid-layout';
 
 import {Summary} from './Summary';
 import {Github} from './Github';
+import {Spotify} from './Spotify';
+import {SplitKeyboards} from './SplitKeyboards';
 
 export const HeroGrid = () => {
   const ResponsiveGridLayout = WidthProvider(Responsive);
@@ -32,21 +34,25 @@ export const HeroGrid = () => {
       {i: 'Summary', x: 0, y: 0, w: 2, h: 1},
       {i: 'Github', x: 0, y: 0, w: 1, h: 1},
       {i: 'c', x: 0, y: 0, w: 1, h: 1},
+      {i: 'Split-Keyboards', x: 2, y: 0, w: 1, h: 2},
     ],
     md: [
       {i: 'Summary', x: 0, y: 0, w: 2, h: 1},
       {i: 'Github', x: 0, y: 0, w: 1, h: 1},
       {i: 'c', x: 0, y: 0, w: 1, h: 1},
+      {i: 'Split-Keyboards', x: 2, y: 0, w: 1, h: 2},
     ],
     sm: [
       {i: 'Summary', x: 0, y: 0, w: 2, h: 2},
       {i: 'Github', x: 0, y: 0, w: 1, h: 1},
       {i: 'c', x: 0, y: 0, w: 1, h: 1},
+      {i: 'Split-Keyboards', x: 2, y: 0, w: 1, h: 2},
     ],
     xs: [
       {i: 'Summary', x: 0, y: 0, w: 2, h: 2},
       {i: 'Github', x: 0, y: 0, w: 1, h: 1},
       {i: 'c', x: 0, y: 0, w: 1, h: 1},
+      {i: 'Split-Keyboards', x: 2, y: 0, w: 1, h: 2},
     ],
   };
 
@@ -66,7 +72,10 @@ export const HeroGrid = () => {
         <Github />
       </div>
       <div className='ugabuga' key='c'>
-        c
+        {/* <Spotify /> */}
+      </div>
+      <div key='Split-Keyboards' className='Split-Keyboards react-grid-item'>
+        <SplitKeyboards />
       </div>
     </ResponsiveGridLayout>
   );

@@ -146,6 +146,21 @@ body {
   width: 100px;
 }
 
+.SplitKeyboards-container {
+  height: 100%;
+  border-radius: 32px;
+  overflow: hidden;
+}
+
+.SplitKeyboards-image {
+  z-index: -2;
+  height: 100%;
+}
+
+.longBtn-container {
+  max-width: 100px;
+}
+
 @media screen and (max-width: 1200px) {
   .layout {
     max-width: 800px;
