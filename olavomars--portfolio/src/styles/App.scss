@@ -149,16 +149,18 @@ body {
 .SplitKeyboards-container {
   height: 100%;
   border-radius: 32px;
+  user-select: none;
   overflow: hidden;
 }
 
 .SplitKeyboards-image {
   z-index: -2;
   height: 100%;
+  user-select: none;
 }
 
-.longBtn-container {
-  max-width: 100px;
+.longBtn {
+  max-height: 15px;
 }
 
 @media screen and (max-width: 1200px) {

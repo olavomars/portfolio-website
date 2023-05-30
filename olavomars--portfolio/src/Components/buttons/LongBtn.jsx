@@ -1,13 +1,14 @@
 import React from 'react';
+import './longBtn_Styles.scss';
 
 const LongBtn = () => {
   return (
-    <div id='container'>
-      <button class='learn-more'>
-        <span class='circle' aria-hidden='true'>
-          <span class='icon arrow'></span>
+    <div id='longBtn-container'>
+      <button class='longBtn-learn-more'>
+        <span class='longBtn-circle' aria-hidden='true'>
+          <span class='longBtn-icon longBtn-arrow'></span>
         </span>
-        <span class='button-text'>Learn More</span>
+        <span class='longBtn-text'>SPLIT</span>
       </button>
     </div>
   );
