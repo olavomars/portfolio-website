@@ -57,6 +57,7 @@ body {
 
 .react-grid-item {
   transition: all 500ms ease 0s;
+  user-select: none;
 
   &:hover {
     cursor: grab;

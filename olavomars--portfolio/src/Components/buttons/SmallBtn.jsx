@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './smallBtn__Styles.css';
+import './smallBtn__Styles.scss';
 
 export const SmallBtn = ({link}) => {
   return (
