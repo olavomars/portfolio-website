@@ -6,7 +6,7 @@ import {Github} from './Github';
 import {Spotify} from './Spotify';
 import {SplitKeyboards} from './SplitKeyboards';
 import {LinkedIn} from './Linkedin';
-import Home from './Maps';
+import {Maps} from './Maps';
 
 export const HeroGrid = () => {
   const ResponsiveGridLayout = WidthProvider(Responsive);
@@ -74,7 +74,7 @@ export const HeroGrid = () => {
         <Github />
       </div>
       <div className='ugaugabuga' key='LinkedIn'>
-        <Home />
+        <Maps />
       </div>
       <div key='Split-Keyboards' className='Split-Keyboards react-grid-item'>
         <SplitKeyboards />

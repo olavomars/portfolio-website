@@ -1,21 +1,24 @@
-import {useMemo} from 'react';
-import {GoogleMap, useLoadScript, MarkerF} from '@react-google-maps/api';
+import {useState} from 'react';
+import 'mapbox-gl/dist/mapbox-gl.css';
+import Map, {Marker} from 'react-map-gl';
 
-const Home = () => {
-  const {isLoaded} = useLoadScript({});
-
-  if (!isLoaded) return <div>Loading...</div>;
-  return <Map />;
-};
-
-function Map() {
-  const center = useMemo(() => ({lat: 44, lng: -80}), []);
-
+export const Maps = () => {
+  const [zoom, setZoom] = useState(13);
   return (
-    <GoogleMap zoom={10} center={center} mapContainerClassName='map-container'>
-      <MarkerF position={center} />
-    </GoogleMap>
+    <div className='maps_container'>
+      <Map
+        mapboxAccessToken={import.meta.env.VITE_MAPBOX_ACCESS_TOKEN}
+        style={{
+          width: '288px',
+          height: '388px',
+        }}
+        initialViewState={{
+          longitude: -60.010959,
+          latitude: -3.08999,
+        }}
+        mapStyle='mapbox://styles/olavomars/clijo5kuz00tq01qga28la6g5'
+        zoom={zoom}
+      ></Map>
+    </div>
   );
-}
-
-export default Home;
+};
