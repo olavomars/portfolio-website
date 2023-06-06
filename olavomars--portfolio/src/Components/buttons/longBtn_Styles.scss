@@ -99,6 +99,22 @@ button {
   }
 }
 
+.SplitKeyboards-container:hover .longBtn-circle {
+  width: 100%;
+  .longBtn-icon {
+    &.longBtn-arrow {
+      background: rgb(13, 17, 23, 0.75);
+      transform: translate(1rem, 0);
+    }
+  }
+}
+
+.SplitKeyboards-container:hover .longBtn-text {
+  color: rgb(13, 17, 23, 0.75);
+  opacity: 100%;
+  transition: opacity 1.5s ease 0s;
+}
+
 @supports (display: grid) {
   #longBtn-container {
     grid-area: main;

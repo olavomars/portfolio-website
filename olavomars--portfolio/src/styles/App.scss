@@ -145,19 +145,30 @@ body {
 
 .github__SVG {
   width: 100px;
+  pointer-events: none;
+}
+
+.linkedin__container {
+  background-color: #5285ce;
+  height: 100%;
+  width: 100%;
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
 }
 
 .SplitKeyboards-container {
   height: 100%;
   border-radius: 32px;
-  user-select: none;
   overflow: hidden;
 }
 
 .SplitKeyboards-image {
   z-index: -2;
   height: 100%;
-  user-select: none;
+  pointer-events: none;
 }
 
 .longBtn {
@@ -174,6 +185,7 @@ body {
     position: absolute;
     left: -8px;
     top: 55px;
+    pointer-events: none;
   }
 }
 
@@ -189,6 +201,10 @@ body {
     align-content: space-around;
     margin: 32px auto 32px auto;
     margin-bottom: 74px;
+  }
+
+  .github__SVG {
+    width: 75px;
   }
 
   .layout {
