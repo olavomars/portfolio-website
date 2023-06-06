@@ -1,6 +1,6 @@
 import React from 'react';
 
-import memoji from '../Assets/memoji.png';
+import memoji from '../Assets/smiling_memoji.png';
 
 export const Summary = () => {
   return (
