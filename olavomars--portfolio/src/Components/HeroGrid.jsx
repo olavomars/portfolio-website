@@ -7,6 +7,7 @@ import {Spotify} from './Spotify';
 import {SplitKeyboards} from './SplitKeyboards';
 import {LinkedIn} from './Linkedin';
 import {Maps} from './Maps';
+import {Link} from 'react-router-dom';
 
 export const HeroGrid = () => {
   const ResponsiveGridLayout = WidthProvider(Responsive);
@@ -37,24 +38,28 @@ export const HeroGrid = () => {
       {i: 'Github', x: 0, y: 0, w: 1, h: 1},
       {i: 'LinkedIn', x: 1, y: 0, w: 1, h: 1},
       {i: 'Split-Keyboards', x: 2, y: 0, w: 1, h: 2},
+      {i: 'Maps', x: 3, y: 0, w: 1, h: 1},
     ],
     md: [
       {i: 'Summary', x: 0, y: 0, w: 2, h: 1},
       {i: 'Github', x: 0, y: 0, w: 1, h: 1},
       {i: 'LinkedIn', x: 1, y: 0, w: 1, h: 1},
       {i: 'Split-Keyboards', x: 2, y: 0, w: 1, h: 2},
+      {i: 'Maps', x: 3, y: 0, w: 1, h: 1},
     ],
     sm: [
       {i: 'Summary', x: 0, y: 0, w: 2, h: 2},
       {i: 'Github', x: 0, y: 0, w: 1, h: 1},
       {i: 'LinkedIn', x: 1, y: 0, w: 1, h: 1},
       {i: 'Split-Keyboards', x: 2, y: 0, w: 1, h: 2},
+      {i: 'Maps', x: 3, y: 0, w: 1, h: 1},
     ],
     xs: [
       {i: 'Summary', x: 0, y: 0, w: 2, h: 2},
       {i: 'Github', x: 0, y: 0, w: 1, h: 1},
       {i: 'LinkedIn', x: 1, y: 0, w: 1, h: 1},
       {i: 'Split-Keyboards', x: 2, y: 0, w: 1, h: 2},
+      {i: 'Maps', x: 3, y: 0, w: 1, h: 1},
     ],
   };
 
@@ -73,11 +78,14 @@ export const HeroGrid = () => {
       <div key='Github' className='react-grid-item'>
         <Github />
       </div>
-      <div className='ugaugabuga' key='LinkedIn'>
-        <Maps />
+      <div className='LinkedIn react-grid-item' key='LinkedIn'>
+        <LinkedIn />
       </div>
       <div key='Split-Keyboards' className='Split-Keyboards react-grid-item'>
         <SplitKeyboards />
+      </div>
+      <div key='Maps' className='Maps react-grid-item'>
+        <Maps />
       </div>
     </ResponsiveGridLayout>
   );

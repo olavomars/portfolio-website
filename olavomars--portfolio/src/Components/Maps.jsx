@@ -17,7 +17,7 @@ export const Maps = () => {
           longitude: -60.010959,
           latitude: -3.08999,
         }}
-        mapStyle='mapbox://styles/olavomars/clijo5kuz00tq01qga28la6g5'
+        mapStyle='mapbox://styles/olavomars/clit7b87g01uv01qg8fpdd8np'
         zoom={zoom}
       >
         <Marker longitude={-60.010959} latitude={-3.08999}>

@@ -4,7 +4,7 @@ import {SmallBtn} from './buttons/SmallBtn';
 
 export const LinkedIn = () => {
   return (
-    <div className='linkedin__container'>
+    <div className='linkedin__container link_component'>
       <img className='github__SVG' src={linkedInLogo} />
       <SmallBtn link='https://linkedin.com/in/olavomart' />
     </div>
