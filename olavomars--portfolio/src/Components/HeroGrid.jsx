@@ -10,10 +10,11 @@ import {Maps} from './Maps';
 
 import {getLayouts} from './HeroGrid.model';
 
+const ResponsiveGridLayout = WidthProvider(Responsive, {
+  measureBeforeMount: true,
+});
+
 export function HeroGrid({currentFilter}) {
-  const ResponsiveGridLayout = WidthProvider(Responsive, {
-    measureBeforeMount: true,
-  });
   const [rowHeight, setRowHeight] = useState(288);
 
   const handleBreakpointChange = (newBreakpoint) => {
@@ -37,6 +38,26 @@ export function HeroGrid({currentFilter}) {
 
   const layouts = useMemo(() => getLayouts(currentFilter), [currentFilter]);
 
+  const gridItems = useMemo(() => {
+    return [
+      <div key='Summary' className='summary__gridItem react-grid-item'>
+        <Summary />
+      </div>,
+      <div key='Github' className='react-grid-item'>
+        <Github />
+      </div>,
+      <div className='LinkedIn react-grid-item' key='LinkedIn'>
+        <LinkedIn />
+      </div>,
+      <div key='Split-Keyboards' className='Split-Keyboards react-grid-item'>
+        <SplitKeyboards />
+      </div>,
+      <div key='Maps' className='Maps react-grid-item'>
+        <Maps />
+      </div>,
+    ];
+  }, []);
+
   return (
     <ResponsiveGridLayout
       className='layout'
@@ -46,21 +67,7 @@ export function HeroGrid({currentFilter}) {
       cols={{lg: 4, md: 4, sm: 4, xs: 2}}
       onBreakpointChange={handleBreakpointChange}
     >
-      <div key='Summary' className='summary__gridItem react-grid-item'>
-        <Summary />
-      </div>
-      <div key='Github' className='react-grid-item'>
-        <Github />
-      </div>
-      <div className='LinkedIn react-grid-item' key='LinkedIn'>
-        <LinkedIn />
-      </div>
-      <div key='Split-Keyboards' className='Split-Keyboards react-grid-item'>
-        <SplitKeyboards />
-      </div>
-      <div key='Maps' className='Maps react-grid-item'>
-        <Maps />
-      </div>
+      {gridItems}
     </ResponsiveGridLayout>
   );
 }
