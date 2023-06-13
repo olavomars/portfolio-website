@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import './Styles/App.scss';
+import './styles/App.scss';
 import Header from './Components/Header';
 import {HeroGrid} from './Components/HeroGrid';
 import {FILTER_NAMES} from './Components/HeroGrid.model';
