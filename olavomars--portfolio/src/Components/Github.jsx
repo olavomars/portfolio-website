@@ -1,6 +1,7 @@
 import React from 'react';
-import githubLogo from '../Assets/icons8-github-60.svg';
 import {SmallBtn} from './buttons/SmallBtn';
+
+import githubLogo from '../Assets/icons8-github-60.svg';
 
 export const Github = () => {
   return (
