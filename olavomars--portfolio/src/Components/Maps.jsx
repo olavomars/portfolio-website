@@ -1,7 +1,6 @@
 import {useState} from 'react';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import Map, {Marker} from 'react-map-gl';
-import memoji from '../Assets/memoji.png';
 
 export const Maps = () => {
   const [zoom, setZoom] = useState(13);
@@ -21,7 +20,10 @@ export const Maps = () => {
         zoom={zoom}
       >
         <Marker longitude={-60.010959} latitude={-3.08999}>
-          <img src={memoji} style={{width: '90px', height: '90px'}} />
+          <img
+            src='/src/Assets/memoji.png'
+            style={{width: '90px', height: '90px'}}
+          />
         </Marker>
       </Map>
     </div>
