@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useMemo, useState} from 'react';
 import {Responsive, WidthProvider} from 'react-grid-layout';
 
 import {Summary} from './Summary';
@@ -7,10 +7,13 @@ import {Spotify} from './Spotify';
 import {SplitKeyboards} from './SplitKeyboards';
 import {LinkedIn} from './Linkedin';
 import {Maps} from './Maps';
-import {Link} from 'react-router-dom';
 
-export const HeroGrid = () => {
-  const ResponsiveGridLayout = WidthProvider(Responsive);
+import {getLayouts} from './HeroGrid.model';
+
+export function HeroGrid({currentFilter}) {
+  const ResponsiveGridLayout = WidthProvider(Responsive, {
+    measureBeforeMount: true,
+  });
   const [rowHeight, setRowHeight] = useState(288);
 
   const handleBreakpointChange = (newBreakpoint) => {
@@ -32,36 +35,7 @@ export const HeroGrid = () => {
     }
   };
 
-  const layouts = {
-    lg: [
-      {i: 'Summary', x: 0, y: 0, w: 2, h: 1},
-      {i: 'Github', x: 0, y: 0, w: 1, h: 1},
-      {i: 'LinkedIn', x: 1, y: 0, w: 1, h: 1},
-      {i: 'Split-Keyboards', x: 2, y: 0, w: 1, h: 2},
-      {i: 'Maps', x: 3, y: 0, w: 1, h: 1},
-    ],
-    md: [
-      {i: 'Summary', x: 0, y: 0, w: 2, h: 1},
-      {i: 'Github', x: 0, y: 0, w: 1, h: 1},
-      {i: 'LinkedIn', x: 1, y: 0, w: 1, h: 1},
-      {i: 'Split-Keyboards', x: 2, y: 0, w: 1, h: 2},
-      {i: 'Maps', x: 3, y: 0, w: 1, h: 1},
-    ],
-    sm: [
-      {i: 'Summary', x: 0, y: 0, w: 2, h: 2},
-      {i: 'Github', x: 0, y: 0, w: 1, h: 1},
-      {i: 'LinkedIn', x: 1, y: 0, w: 1, h: 1},
-      {i: 'Split-Keyboards', x: 2, y: 0, w: 1, h: 2},
-      {i: 'Maps', x: 3, y: 0, w: 1, h: 1},
-    ],
-    xs: [
-      {i: 'Summary', x: 0, y: 0, w: 2, h: 2},
-      {i: 'Github', x: 0, y: 0, w: 1, h: 1},
-      {i: 'LinkedIn', x: 1, y: 0, w: 1, h: 1},
-      {i: 'Split-Keyboards', x: 2, y: 0, w: 1, h: 2},
-      {i: 'Maps', x: 3, y: 0, w: 1, h: 1},
-    ],
-  };
+  const layouts = useMemo(() => getLayouts(currentFilter), [currentFilter]);
 
   return (
     <ResponsiveGridLayout
@@ -89,4 +63,4 @@ export const HeroGrid = () => {
       </div>
     </ResponsiveGridLayout>
   );
-};
+}

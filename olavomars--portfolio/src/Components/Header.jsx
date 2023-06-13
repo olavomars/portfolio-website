@@ -1,19 +1,24 @@
-import {useState} from 'react';
+import {useMemo, useState} from 'react';
 import '../styles/App.scss';
+import {FILTER_NAMES} from './HeroGrid.model';
 
-const FILTERS = [
-  {id: 1, name: 'All', left: 5, width: 40},
-  {id: 2, name: 'About', left: 55, width: 65},
-  {id: 3, name: 'Projects', left: 129, width: 82},
-  {id: 4, name: 'Personal', left: 218, width: 83},
+const FILTER_BADGES = [
+  {name: FILTER_NAMES.ALL, left: 5, width: 40},
+  {name: FILTER_NAMES.ABOUT, left: 55, width: 65},
+  {name: FILTER_NAMES.PROJECTS, left: 129, width: 82},
+  {name: FILTER_NAMES.PERSONAL, left: 218, width: 83},
 ];
 
-function Header() {
-  const [currentFilter, setCurrentFilter] = useState(FILTERS[0]);
+function Header({handleFilterChange, currentFilter}) {
+  const filter = useMemo(
+    () =>
+      FILTER_BADGES.find((filter) => {
+        return filter.name === currentFilter;
+      }),
+    [currentFilter]
+  );
 
-  const handleFilterChange = (filter) => {
-    setCurrentFilter(filter);
-  };
+  console.log(filter);
 
   return (
     <nav className='pages__Header'>
@@ -22,16 +27,16 @@ function Header() {
         <div
           className='Filters__Highlight'
           style={{
-            width: `${currentFilter.width}px`,
-            transform: `translate(${currentFilter.left}px, 0)`,
+            width: `${filter.width}px`,
+            transform: `translate(${filter.left}px, 0)`,
             transition: 'transform 0.3s ease-in-out, width 0.4s ease',
           }}
         ></div>
-        {FILTERS.map((filter) => (
+        {FILTER_BADGES.map((filter) => (
           <div
-            key={filter.id}
+            key={JSON.stringify(filter)}
             className={`Filters__Option ${
-              currentFilter.id === filter.id ? 'active' : ''
+              currentFilter === filter.name ? 'active' : ''
             }`}
             onClick={() => handleFilterChange(filter)}
           >
