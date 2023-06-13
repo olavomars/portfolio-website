@@ -1,11 +1,13 @@
 import React from 'react';
-import memoji from '../Assets/smiling_memoji.png';
 
 export const Summary = () => {
   return (
     <div className='summary__container'>
       <div className='summary__memojiContainer'>
-        <img src={memoji} className='summary__memoji'></img>
+        <img
+          src='/src/Assets/smiling_memoji.png'
+          className='summary__memoji'
+        ></img>
       </div>
       <p className='summary__text'>
         I'm <span className='summary__gradientText'>Olavo</span>, a developer
