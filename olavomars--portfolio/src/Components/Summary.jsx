@@ -4,10 +4,7 @@ export const Summary = () => {
   return (
     <div className='summary__container'>
       <div className='summary__memojiContainer'>
-        <img
-          src='/src/Assets/smiling_memoji.png'
-          className='summary__memoji'
-        ></img>
+        <img src='/Assets/smiling_memoji.png' className='summary__memoji'></img>
       </div>
       <p className='summary__text'>
         I'm <span className='summary__gradientText'>Olavo</span>, a developer

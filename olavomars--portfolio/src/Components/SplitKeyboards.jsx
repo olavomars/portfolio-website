@@ -8,7 +8,7 @@ export const SplitKeyboards = () => {
       <LongBtn className='longBtn' />
       <img
         className='SplitKeyboards-image'
-        src='/src/Assets/portfolio-mockups.jpg'
+        src='/Assets/portfolio-mockups.jpg'
       />
     </div>
   );
