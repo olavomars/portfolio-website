@@ -1,20 +1,21 @@
-import React, {useMemo, useState} from 'react';
-import {Responsive, WidthProvider} from 'react-grid-layout';
+import React, { useMemo, useState } from 'react';
+import { Responsive, WidthProvider } from 'react-grid-layout';
 
-import {Summary} from './Summary';
-import {Github} from './Github';
-import {Spotify} from './Spotify';
-import {SplitKeyboards} from './SplitKeyboards';
-import {LinkedIn} from './Linkedin';
-import {Maps} from './Maps';
+import { Summary } from './Summary';
+import { Github } from './Github';
+import { Spotify } from './Spotify';
+import { SplitKeyboards } from './SplitKeyboards';
+import { LinkedIn } from './Linkedin';
+import { Maps } from './Maps';
 
-import {getLayouts} from './HeroGrid.model';
+import { getLayouts } from './HeroGrid.model';
+import { AIWeatherApp } from './AIWeatherApp';
 
 const ResponsiveGridLayout = WidthProvider(Responsive, {
   measureBeforeMount: true,
 });
 
-export function HeroGrid({currentFilter}) {
+export function HeroGrid({ currentFilter }) {
   const [rowHeight, setRowHeight] = useState(288);
 
   const handleBreakpointChange = (newBreakpoint) => {
@@ -53,7 +54,10 @@ export function HeroGrid({currentFilter}) {
         <SplitKeyboards />
       </div>,
       <div key='Maps' className='Maps react-grid-item'>
-        <Maps />
+        <Maps height={rowHeight} />
+      </div>,
+      <div key='WeatherAI' className='react-grid-item'>
+        <AIWeatherApp />
       </div>,
     ];
   }, []);
@@ -62,9 +66,9 @@ export function HeroGrid({currentFilter}) {
     <ResponsiveGridLayout
       className='layout'
       layouts={layouts}
-      breakpoints={{lg: 1200, md: 800, sm: 480, xs: 0}}
+      breakpoints={{ lg: 1200, md: 800, sm: 480, xs: 0 }}
       rowHeight={rowHeight}
-      cols={{lg: 4, md: 4, sm: 4, xs: 2}}
+      cols={{ lg: 4, md: 4, sm: 4, xs: 2 }}
       onBreakpointChange={handleBreakpointChange}
     >
       {gridItems}
