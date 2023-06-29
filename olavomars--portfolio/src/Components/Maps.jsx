@@ -3,8 +3,6 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import Map, { Marker } from 'react-map-gl';
 
 export const Maps = (height) => {
-  const [zoom, setZoom] = useState(13);
-
   console.log(height);
   return (
     <div className='maps_container'>
@@ -12,10 +10,13 @@ export const Maps = (height) => {
         mapboxAccessToken={import.meta.env.VITE_MAPBOX_ACCESS_TOKEN}
         initialViewState={{
           longitude: -60.010959,
-          latitude: -3.08999,
+          latitude: -3.09399,
+          zoom: 13,
+        }}
+        style={{
+          height: '320px',
         }}
         mapStyle='mapbox://styles/olavomars/clit7b87g01uv01qg8fpdd8np'
-        zoom={zoom}
       >
         <Marker longitude={-60.010959} latitude={-3.08999}>
           <img
