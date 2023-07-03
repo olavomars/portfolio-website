@@ -22,6 +22,7 @@ const LAYOUTS = {
       { i: 'Split-Keyboards', x: 2, y: 0, w: 1, h: 2 },
       { i: 'Maps', x: 3, y: 0, w: 1, h: 1 },
       { i: 'WeatherAI', x: 0, y: 0, w: 2, h: 1 },
+      { i: 'Spotify', x: 3, y: 4, w: 2, h: 1 },
     ],
     md: [
       { i: 'Summary', x: 0, y: 0, w: 2, h: 1 },
@@ -30,6 +31,7 @@ const LAYOUTS = {
       { i: 'Split-Keyboards', x: 2, y: 0, w: 1, h: 2 },
       { i: 'Maps', x: 3, y: 0, w: 1, h: 1 },
       { i: 'WeatherAI', x: 0, y: 0, w: 2, h: 1 },
+      { i: 'Spotify', x: 3, y: 4, w: 2, h: 1 },
     ],
     sm: [
       { i: 'Summary', x: 0, y: 0, w: 2, h: 2 },
@@ -38,6 +40,7 @@ const LAYOUTS = {
       { i: 'Split-Keyboards', x: 2, y: 0, w: 1, h: 2 },
       { i: 'Maps', x: 3, y: 0, w: 1, h: 1 },
       { i: 'WeatherAI', x: 0, y: 0, w: 2, h: 1 },
+      { i: 'Spotify', x: 3, y: 4, w: 2, h: 1 },
     ],
     xs: [
       { i: 'Summary', x: 0, y: 0, w: 2, h: 2 },
@@ -46,6 +49,7 @@ const LAYOUTS = {
       { i: 'Split-Keyboards', x: 2, y: 0, w: 1, h: 2 },
       { i: 'Maps', x: 3, y: 0, w: 1, h: 1 },
       { i: 'WeatherAI', x: 0, y: 0, w: 2, h: 1 },
+      { i: 'Spotify', x: 3, y: 4, w: 2, h: 1 },
     ],
   },
   [FILTER_NAMES.ABOUT]: {
@@ -56,6 +60,7 @@ const LAYOUTS = {
       { i: 'Split-Keyboards', x: 2, y: 0, w: 1, h: 2 },
       { i: 'Maps', x: 3, y: 1, w: 1, h: 1 },
       { i: 'WeatherAI', x: 0, y: 0, w: 2, h: 1 },
+      { i: 'Spotify', x: 3, y: 4, w: 2, h: 1 },
     ],
     md: [
       { i: 'Summary', x: 4, y: 0, w: 2, h: 1 },
@@ -64,6 +69,7 @@ const LAYOUTS = {
       { i: 'Split-Keyboards', x: 2, y: 0, w: 1, h: 2 },
       { i: 'Maps', x: 3, y: 0, w: 1, h: 1 },
       { i: 'WeatherAI', x: 0, y: 0, w: 2, h: 1 },
+      { i: 'Spotify', x: 3, y: 4, w: 2, h: 1 },
     ],
     sm: [
       { i: 'Summary', x: 0, y: 0, w: 2, h: 2 },
@@ -72,6 +78,7 @@ const LAYOUTS = {
       { i: 'Split-Keyboards', x: 2, y: 0, w: 1, h: 2 },
       { i: 'Maps', x: 3, y: 0, w: 1, h: 1 },
       { i: 'WeatherAI', x: 0, y: 0, w: 2, h: 1 },
+      { i: 'Spotify', x: 3, y: 4, w: 2, h: 1 },
     ],
     xs: [
       { i: 'Summary', x: 0, y: 0, w: 2, h: 2 },
@@ -80,6 +87,7 @@ const LAYOUTS = {
       { i: 'Split-Keyboards', x: 2, y: 0, w: 1, h: 2 },
       { i: 'Maps', x: 3, y: 0, w: 1, h: 1 },
       { i: 'WeatherAI', x: 0, y: 0, w: 2, h: 1 },
+      { i: 'Spotify', x: 3, y: 4, w: 2, h: 1 },
     ],
   },
 };
