@@ -5,7 +5,7 @@ export const Spotify = () => {
 
   useEffect(() => {
     fetch(
-      `http://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=${
+      `https://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=${
         import.meta.env.VITE_SPOTIFY_USER
       }&api_key=${
         import.meta.env.VITE_SPOTIFY_API_KEY
