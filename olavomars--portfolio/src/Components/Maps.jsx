@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import Map, { Marker } from 'react-map-gl';
+import { ThemeContext } from '../Contexts/theme-context';
 
 export const Maps = (height) => {
-  console.log(height);
+  const { theme, setTheme } = useContext(ThemeContext);
+
   return (
     <div className='maps_container'>
       <Map
@@ -16,7 +18,11 @@ export const Maps = (height) => {
         style={{
           height: '320px',
         }}
-        mapStyle='mapbox://styles/olavomars/clit7b87g01uv01qg8fpdd8np'
+        mapStyle={
+          theme == 'light'
+            ? 'mapbox://styles/olavomars/clit7b87g01uv01qg8fpdd8np'
+            : 'mapbox://styles/olavomars/cljp2h5b200to01qm6ng6b3no'
+        }
       >
         <Marker longitude={-60.010959} latitude={-3.08999}>
           <img

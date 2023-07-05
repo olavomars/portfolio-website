@@ -32,3 +32,147 @@ $themes: (
 @function themed($key) {
   @return map-get($theme-map, $key);
 }
+
+.body {
+  @include themify($themes) {
+    background: themed('body');
+  }
+}
+
+.theme-light .body {
+  background: rgb(247, 242, 242);
+  color: rgb(13, 17, 23);
+}
+.theme-dark .body {
+  background: rgb(9, 12, 16);
+  color: rgb(240, 242, 248);
+}
+
+.theme-light .react-grid-item {
+  background: rgb(255, 255, 255);
+}
+
+.theme-dark .react-grid-item {
+  background-color: rgb(13, 17, 23);
+  box-shadow: rgb(48, 54, 61) 0px 0px 0px 2px inset;
+}
+
+.theme-light .Filters__Container {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.theme-dark .Filters__Container {
+  background: inherit;
+  box-shadow: rgb(48, 54, 61) 0px 0px 0px 2px inset;
+}
+
+.theme-dark .Filters__Highlight {
+  background: rgb(33, 38, 45);
+}
+
+.theme-light .spotify-song-name {
+  color: #171515;
+}
+
+.theme-dark .spotify-song-name {
+  color: rgb(240, 242, 248);
+}
+
+.theme-light .spotify-song-artist {
+  color: rgb(13, 17, 23);
+}
+
+.theme-dark .spotify-song-artist {
+  color: rgb(231, 231, 231);
+}
+
+.theme-light .linkedin__container {
+  background-color: #5285ce;
+}
+
+.theme-dark .linkedin__container {
+  background: inherit;
+  box-shadow: rgb(48, 54, 61) 0px 0px 0px 2px inset;
+}
+
+.theme-light .github__container {
+  background-color: #171515;
+}
+
+.theme-dark .github__container {
+  background: inherit;
+  box-shadow: rgb(48, 54, 61) 0px 0px 0px 2px inset;
+}
+
+.theme-light .button {
+  color: rgb(13, 17, 23, 0.75);
+  &:hover {
+    transition: box-shadow 0.8s ease-out 0s;
+    box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 0px 6px;
+    .longBtn-circle {
+      .longBtn-icon {
+        &.longBtn-arrow {
+          background: rgb(13, 17, 23, 0.75);
+        }
+      }
+    }
+  }
+}
+
+.theme-dark .button {
+  color: white;
+  &:hover {
+    transition: box-shadow 0.8s ease-in-out 0s;
+    box-shadow: rgb(48, 54, 61) 0px 0px 0px 2px;
+    .longBtn-circle {
+      .longBtn-icon {
+        &.longBtn-arrow {
+          background: rgb(255, 255, 255, 1);
+        }
+      }
+    }
+  }
+}
+
+.theme-light .longBtn-circle {
+  background: rgb(244, 244, 244);
+}
+
+.theme-dark .longBtn-circle {
+  background: rgb(13, 17, 23);
+  box-shadow: rgb(48, 54, 61) 0px 0px 0px 2px inset;
+}
+
+.theme-light .longBtn-icon {
+  &.longBtn-arrow {
+    &::before {
+      border-top: 0.125rem solid rgb(13, 17, 23, 0.75);
+      border-right: 0.125rem solid rgb(13, 17, 23, 0.75);
+    }
+  }
+}
+
+.theme-dark .longBtn-icon {
+  &.longBtn-arrow {
+    &::before {
+      border-top: 0.125rem solid rgba(255, 255, 255, 1);
+      border-right: 0.125rem solid rgba(255, 255, 255, 1);
+    }
+  }
+}
+
+.theme-dark .SplitKeyboards-container:hover .longBtn-circle {
+  .longBtn-icon {
+    &.longBtn-arrow {
+      background: rgba(255, 255, 255, 1);
+    }
+  }
+}
+
+.theme-dark .SplitKeyboards-container:hover .longBtn-circle {
+  .longBtn-icon {
+    &.longBtn-arrow {
+      background: rgba(255, 255, 255, 1);
+    }
+  }
+}

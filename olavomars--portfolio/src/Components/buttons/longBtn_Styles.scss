@@ -1,6 +1,5 @@
 $bg: #f3f8fa;
 $white: #fff;
-$black: rgb(244, 244, 244);
 
 @mixin transition(
   $property: all,
@@ -10,7 +9,7 @@ $black: rgb(244, 244, 244);
   transition: $property $duration $ease;
 }
 
-button {
+.button {
   bottom: 5%;
   left: 5%;
   position: absolute;
@@ -33,7 +32,6 @@ button {
       margin: 0;
       width: 2rem;
       height: 2rem;
-      background: $black;
       border-radius: 1.625rem;
       .longBtn-icon {
         @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
@@ -41,7 +39,7 @@ button {
         top: 0;
         bottom: 0;
         margin: auto;
-        background: $white;
+        background: rgb(244, 244, 244);
         &.longBtn-arrow {
           @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
           left: 0.16rem;
@@ -55,8 +53,6 @@ button {
             right: 0.0625rem;
             width: 0.625rem;
             height: 0.625rem;
-            border-top: 0.125rem solid rgb(13, 17, 23, 0.75);
-            border-right: 0.125rem solid rgb(13, 17, 23, 0.75);
             transform: rotate(45deg);
           }
         }
@@ -79,20 +75,17 @@ button {
   }
   &:hover {
     transition: box-shadow 0.8s ease-out 0s;
-    box-shadow: rgb(255, 255, 255) 0px 0px 0px 1px,
-      rgba(255, 255, 255, 0.5) 0px 0px 0px 6px;
+    box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 0px 6px;
     border-radius: 1.625rem;
     .longBtn-circle {
       width: 100%;
       .longBtn-icon {
         &.longBtn-arrow {
-          background: rgb(13, 17, 23, 0.75);
           transform: translate(1rem, 0);
         }
       }
     }
     .longBtn-text {
-      color: rgb(13, 17, 23, 0.75);
       opacity: 100%;
       transition: opacity 1.5s ease 0s;
     }
@@ -110,7 +103,6 @@ button {
 }
 
 .SplitKeyboards-container:hover .longBtn-text {
-  color: rgb(13, 17, 23, 0.75);
   opacity: 100%;
   transition: opacity 1.5s ease 0s;
 }

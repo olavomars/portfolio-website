@@ -1,15 +1,15 @@
-import {useMemo, useState} from 'react';
+import { useMemo, useState } from 'react';
 import '../styles/App.scss';
-import {FILTER_NAMES} from './HeroGrid.model';
+import { FILTER_NAMES } from './HeroGrid.model';
 
 const FILTER_BADGES = [
-  {name: FILTER_NAMES.ALL, left: 5, width: 40},
-  {name: FILTER_NAMES.ABOUT, left: 55, width: 65},
-  {name: FILTER_NAMES.PROJECTS, left: 129, width: 82},
-  {name: FILTER_NAMES.PERSONAL, left: 218, width: 83},
+  { name: FILTER_NAMES.ALL, left: 5, width: 40 },
+  { name: FILTER_NAMES.ABOUT, left: 55, width: 65 },
+  { name: FILTER_NAMES.PROJECTS, left: 129, width: 82 },
+  { name: FILTER_NAMES.PERSONAL, left: 218, width: 83 },
 ];
 
-function Header({handleFilterChange, currentFilter}) {
+function Header({ handleFilterChange, currentFilter }) {
   const filter = useMemo(
     () =>
       FILTER_BADGES.find((filter) => {
@@ -17,8 +17,6 @@ function Header({handleFilterChange, currentFilter}) {
       }),
     [currentFilter]
   );
-
-  console.log(filter);
 
   return (
     <nav className='pages__Header'>

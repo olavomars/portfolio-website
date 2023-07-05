@@ -10,6 +10,9 @@ import { Maps } from './Maps';
 
 import { getLayouts } from './HeroGrid.model';
 import { AIWeatherApp } from './AIWeatherApp';
+import { ThemeSwitch } from './ThemeSwitch';
+
+import '../styles/theme-variables.scss';
 
 const ResponsiveGridLayout = WidthProvider(Responsive, {
   measureBeforeMount: true,
@@ -74,6 +77,9 @@ export function HeroGrid({ currentFilter }) {
       </div>
       <div key='Spotify' className='react-grid-item'>
         <Spotify />
+      </div>
+      <div key='ThemeSwitch' className='react-grid-item'>
+        <ThemeSwitch />
       </div>
       ,
     </ResponsiveGridLayout>
