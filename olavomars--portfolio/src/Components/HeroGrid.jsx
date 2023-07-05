@@ -47,6 +47,7 @@ export function HeroGrid({ currentFilter }) {
       rowHeight={rowHeight}
       cols={{ lg: 4, md: 4, sm: 4, xs: 2 }}
       onBreakpointChange={handleBreakpointChange}
+      margin={[15, 15]}
     >
       <div key='Summary' className='summary__gridItem react-grid-item'>
         <Summary />
