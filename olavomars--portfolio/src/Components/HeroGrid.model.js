@@ -13,6 +13,15 @@ export const FILTER_NAMES = {
   PERSONAL: 'Personal',
 };
 
+export const STYLES = {
+  [FILTER_NAMES.ALL]: {
+    Summary: 'opacity-full',
+  },
+  [FILTER_NAMES.ABOUT]: {
+    Summary: 'opacity-half',
+  },
+};
+
 const LAYOUTS = {
   [FILTER_NAMES.ALL]: {
     lg: [

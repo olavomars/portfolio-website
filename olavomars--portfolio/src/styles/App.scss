@@ -283,6 +283,14 @@ body {
   scale: 4;
 }
 
+.opacity-full {
+  opacity: 1;
+}
+
+.opacity-half {
+  opacity: 0.5;
+}
+
 @media screen and (max-width: 1200px) {
   .layout {
     max-width: 800px;

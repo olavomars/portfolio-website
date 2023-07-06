@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { Responsive, WidthProvider } from 'react-grid-layout';
+import { STYLES, FILTER_NAMES } from './HeroGrid.model';
 
 import { Summary } from './Summary';
 import { Github } from './Github';
@@ -52,7 +53,10 @@ export function HeroGrid({ currentFilter }) {
       onBreakpointChange={handleBreakpointChange}
       margin={[15, 15]}
     >
-      <div key='Summary' className='summary__gridItem react-grid-item'>
+      <div
+        key='Summary'
+        className={`summary__gridItem react-grid-item ${STYLES[currentFilter].Summary}`}
+      >
         <Summary />
       </div>
       ,

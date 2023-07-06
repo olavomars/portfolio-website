@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './styles/App.scss';
 import Header from './Components/Header';
 import { HeroGrid } from './Components/HeroGrid';
@@ -8,12 +8,21 @@ import './styles/theme-variables.scss';
 
 export const App = () => {
   const [theme, setTheme] = useState('light');
-
   const [currentFilter, setCurrentFilter] = useState(FILTER_NAMES.ALL);
 
   const handleFilterChange = (filter) => {
     setCurrentFilter(filter.name);
   };
+
+  useEffect(() => {
+    if (theme === 'light') {
+      document.querySelector('body').classList.remove('theme-dark');
+      document.querySelector('body').classList.add('theme-light');
+    } else {
+      document.querySelector('body').classList.remove('theme-light');
+      document.querySelector('body').classList.add('theme-dark');
+    }
+  }, [theme]);
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
