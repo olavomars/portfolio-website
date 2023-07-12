@@ -18,7 +18,14 @@ export const STYLES = {
     Summary: 'opacity-full',
   },
   [FILTER_NAMES.ABOUT]: {
-    Summary: 'opacity-half',
+    Summary: 'opacity-full',
+    Github: 'opacity-full',
+    LinkedIn: 'opacity-full',
+    SplitKeyboards: 'opacity-half',
+    Maps: 'opacity-full',
+    WeatherAI: 'opacity-half',
+    Spotify: 'opacity-full',
+    ThemeSwitch: 'opacity-half',
   },
 };
 
@@ -77,13 +84,13 @@ const LAYOUTS = {
       { i: 'ThemeSwitch', x: 4, y: 3, w: 1, h: 1 },
     ],
     md: [
-      { i: 'Summary', x: 4, y: 0, w: 2, h: 1 },
+      { i: 'Summary', x: 1, y: 0, w: 2, h: 1 },
       { i: 'Github', x: 0, y: 0, w: 1, h: 1 },
-      { i: 'LinkedIn', x: 1, y: 0, w: 1, h: 1 },
-      { i: 'Split-Keyboards', x: 2, y: 0, w: 1, h: 2 },
-      { i: 'Maps', x: 3, y: 0, w: 1, h: 1 },
-      { i: 'WeatherAI', x: 0, y: 0, w: 2, h: 1 },
-      { i: 'Spotify', x: 3, y: 4, w: 2, h: 1 },
+      { i: 'LinkedIn', x: 3, y: 0, w: 1, h: 1 },
+      { i: 'Split-Keyboards', x: 2, y: 4, w: 1, h: 2 },
+      { i: 'Maps', x: 2, y: 0, w: 1, h: 1 },
+      { i: 'WeatherAI', x: 0, y: 2, w: 2, h: 1 },
+      { i: 'Spotify', x: 0, y: 0, w: 2, h: 1 },
       { i: 'ThemeSwitch', x: 4, y: 3, w: 1, h: 1 },
     ],
     sm: [

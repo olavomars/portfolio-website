@@ -60,29 +60,50 @@ export function HeroGrid({ currentFilter }) {
         <Summary />
       </div>
       ,
-      <div key='Github' className='react-grid-item'>
+      <div
+        key='Github'
+        className={`react-grid-item ${STYLES[currentFilter].Github}`}
+      >
         <Github />
       </div>
       ,
-      <div className='LinkedIn react-grid-item' key='LinkedIn'>
+      <div
+        className={`LinkedIn react-grid-item ${STYLES[currentFilter].LinkedIn}`}
+        key='LinkedIn'
+      >
         <LinkedIn />
       </div>
       ,
-      <div key='Split-Keyboards' className='Split-Keyboards react-grid-item'>
+      <div
+        key='Split-Keyboards'
+        className={`Split-Keyboards react-grid-item ${STYLES[currentFilter].SplitKeyboards}`}
+      >
         <SplitKeyboards />
       </div>
       ,
-      <div key='Maps' className='Maps react-grid-item'>
+      <div
+        key='Maps'
+        className={`Maps react-grid-item ${STYLES[currentFilter].Maps}`}
+      >
         <Maps height={rowHeight} />
       </div>
       ,
-      <div key='WeatherAI' className='react-grid-item'>
+      <div
+        key='WeatherAI'
+        className={`react-grid-item ${STYLES[currentFilter].WeatherAI}`}
+      >
         <AIWeatherApp />
       </div>
-      <div key='Spotify' className='react-grid-item'>
+      <div
+        key='Spotify'
+        className={`react-grid-item ${STYLES[currentFilter].Spotify}`}
+      >
         <Spotify />
       </div>
-      <div key='ThemeSwitch' className='react-grid-item'>
+      <div
+        key='ThemeSwitch'
+        className={`react-grid-item ${STYLES[currentFilter].ThemeSwitch}`}
+      >
         <ThemeSwitch />
       </div>
       ,
